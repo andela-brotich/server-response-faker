@@ -1,0 +1,18 @@
+{
+  "name": "server-response-faker",
+  "version": "1.0.0",
+  "description": "Fake server response for testing",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela-brotich/server-response-faker.git"
+  },
+  "author": "Brian Rotich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andela-brotich/server-response-faker/issues"
+  },
+  "homepage": "https://github.com/andela-brotich/server-response-faker#readme"
+}
