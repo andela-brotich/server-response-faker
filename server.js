@@ -12,8 +12,7 @@ server.route({
   method: 'GET',
   path: '/',
   handler(req, res) {
-    console.log(req);
-    res('Hello, world!');
+    res('SImple http reposnse faker');
   }
 });
 
@@ -24,14 +23,16 @@ server.route({
     let actor = req.query.actor;
     let redirect_url = req.query.redirect_url;
 
-    let response = res('success');
+    let response = res({ghgg: 'tesr'});
 
     if (redirect_url) {
       response.redirect(redirect_url);
+    } else {
+      response.code(200);
     }
 
-    return response.type('text/plain')
-      .header('Set-Cookie', 'jwt-token=sample-token-here;path=/;');
+    return response.type('application/json')
+            .header('Set-Cookie', 'jwt-token=sample-token-here;path=/;');
   }
 });
 
