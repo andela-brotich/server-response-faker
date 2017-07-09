@@ -14,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/andela-brotich/server-response-faker/issues"
   },
-  "homepage": "https://github.com/andela-brotich/server-response-faker#readme"
+  "homepage": "https://github.com/andela-brotich/server-response-faker#readme",
+  "dependencies": {
+    "hapi": "^16.4.3"
+  }
 }
