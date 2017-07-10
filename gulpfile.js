@@ -21,7 +21,7 @@ gulp.task('test:backend', ['coverage:setup'], () => {
 
 gulp.task('test', ['test:backend']);
 
-gulp.task('codacy', () => {
+gulp.task('codacy-reporter', () => {
   gulp.src(['./coverage/lcov.info'])
     .pipe(codacy({
       token: process.env.CODACY_REPO_TOKEN
