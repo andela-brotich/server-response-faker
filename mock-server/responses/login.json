@@ -1,0 +1,40 @@
+{
+  "statusCode": 200,
+  "path": "/login",
+  "method": "GET",
+  "response": {
+    "default": {
+      "message": "redirected to login"
+    },
+    "fellow": {
+      "message": "redirected fellow to login"
+    }
+  },
+  "headers": {
+    "cookies": {
+      "default": [
+        {
+          "name": "jwt-token",
+          "value": "sample-feault-jwt-token",
+          "domain": "localhost",
+          "path": "/",
+          "expires": "Sun, 23 Jul 2017 20:49:48 -0000"
+        }
+      ],
+      "fellow": [
+        {
+          "name": "jwt-token",
+          "value": "sample-guest-jwt-token"
+        }
+      ],
+      "guest": [
+        {
+          "name": "jwt-token",
+          "value": "sample-guest-jwt-token"
+        }
+      ]
+    },
+    "Content-Type": "text/html",
+    "Server": "localhost"
+  }
+}
