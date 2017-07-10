@@ -1,17 +1,17 @@
 const gulp = require('gulp');
-const codeclimate = require('gulp-codeclimate-reporter');
+const codacy= require('gulp-codacy');
 const eslint = require('gulp-eslint');
 const istanbul = require('gulp-istanbul');
 const mocha = require('gulp-mocha');
 
 gulp.task('coverage:setup', () => {
-  return gulp.src(['mock-server/*'])
+  return gulp.src(['mock-server/**/*.js'])
     .pipe(istanbul({ includeUntested: true }))
     .pipe(istanbul.hookRequire());
 });
 
 gulp.task('test:backend', ['coverage:setup'], () => {
-  return gulp.src(['tests/**/*.js'])
+  return gulp.src(['test/**/*.js'])
     .pipe(mocha())
     .on('error', process.exit.bind(process, 1))
     .pipe(istanbul.writeReports({
@@ -21,7 +21,9 @@ gulp.task('test:backend', ['coverage:setup'], () => {
 
 gulp.task('test', ['test:backend']);
 
-gulp.task('codeclimate', () => {
+gulp.task('codacy', () => {
   gulp.src(['./coverage/lcov.info'])
-    .pipe(codeclimate({ token: process.env.CODECLIMATE_REPO_TOKEN }));
+    .pipe(codacy({
+      token: process.env.CODACY_REPO_TOKEN
+    }));
 });
