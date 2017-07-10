@@ -21,6 +21,8 @@
     "hapi": "^16.4.3"
   },
   "devDependencies": {
+    "eslint-config-airbnb-es5": "^1.2.0",
+    "mocha": "^3.4.2",
     "nodemon": "^1.11.0"
   }
 }
