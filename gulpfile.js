@@ -5,7 +5,7 @@ const istanbul = require('gulp-istanbul');
 const mocha = require('gulp-mocha');
 
 gulp.task('coverage:setup', () => {
-  return gulp.src(['mock-server/**/*.js'])
+  return gulp.src(['mock-server/*.js'])
     .pipe(istanbul({ includeUntested: true }))
     .pipe(istanbul.hookRequire());
 });
@@ -23,7 +23,5 @@ gulp.task('test', ['test:backend']);
 
 gulp.task('codacy-reporter', () => {
   gulp.src(['./coverage/lcov.info'])
-    .pipe(codacy({
-      token: process.env.CODACY_REPO_TOKEN
-    }));
+    .pipe(codacy());
 });
