@@ -14,3 +14,8 @@ script:
     - yarn test
 after_success:
     - yarn run codacy-reporter
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
