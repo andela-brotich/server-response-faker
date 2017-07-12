@@ -21,24 +21,23 @@ server.route({
   path: '/login',
   handler(req, res) {
     let actor = req.query.actor;
-    let redirect_url = req.query.redirect_url;
+    let redirectUrl = req.query.redirect_url;
 
-    let response = res({ghgg: 'tesr'});
+    let response = res({ ghgg: 'tesr' });
 
-    if (redirect_url) {
-      response.redirect(redirect_url);
+    if (redirectUrl) {
+      response.redirect(redirectUrl);
     } else {
       response.code(200);
     }
 
     return response.type('application/json')
-            .header('Set-Cookie', 'jwt-token=sample-token-here;path=/;');
+      .header('Set-Cookie', 'jwt-token=sample-token-here;path=/;');
   }
 });
 
 // Start the server
-server.start( err => {
-
+server.start((err) => {
   if (err) {
     throw err;
   }
